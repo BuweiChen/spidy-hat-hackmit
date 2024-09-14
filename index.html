@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camera Feed with Classification</title>
+  </head>
+  <body>
+    <h1>Live Classification Results</h1>
+
+    <p id="classification-result">Waiting for classification...</p>
+
+    <script>
+      // Fetch the classification result periodically
+      async function fetchClassification() {
+        try {
+          const response = await fetch(
+            "http://0.0.0.0:8000/get_classification/"
+          );
+          const data = await response.json();
+
+          if (data.predicted_class) {
+            document.getElementById(
+              "classification-result"
+            ).innerText = `Predicted Class: ${data.predicted_class}`;
+          } else if (data.error) {
+            document.getElementById("classification-result").innerText =
+              "Waiting for classification...";
+          }
+        } catch (error) {
+          console.error("Error fetching classification:", error);
+        }
+      }
+
+      // Poll for the latest classification result every 3 seconds
+      setInterval(fetchClassification, 3000);
+    </script>
+  </body>
+</html>
