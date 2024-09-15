@@ -6,12 +6,26 @@ from PIL import Image
 import io
 import torch
 import requests
+from io import BytesIO
+
 import asyncio
 import pygame
-# from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager
 
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Start the background task when the app starts
+    task = asyncio.create_task(check_for_character_and_play_song())
+
+    # Yield control to the application
+    yield
+
+    # Cleanup or shutdown tasks when app closes
+    task.cancel()
+
+
+app = FastAPI(lifespan=lifespan)
 
 # Initialize pygame mixer for music playback
 pygame.mixer.init()
@@ -32,7 +46,7 @@ model = ViTForImageClassification.from_pretrained(model_name_or_path)
 
 # Global state to track classification result and song status
 classification_result = None
-is_song_playing = False
+song_playing = False
 
 # Character-to-mp3 mapping
 character_to_song = {
@@ -74,7 +88,10 @@ async def classify_image(file: UploadFile = File(...)):
     predicted_class_idx = logits.argmax(-1).item()
     classification_result = model.config.id2label[predicted_class_idx]
 
-    return {"status": "Image classified successfully"}
+    return {
+        "status": "Image classified successfully",
+        "predicted_class": classification_result,
+    }
 
 
 @app.get("/get_classification/")
@@ -87,9 +104,9 @@ async def get_classification():
 
 
 @app.get("/is_song_playing/")
-async def is_song_playing_endpoint():
-    global is_song_playing
-    if is_song_playing:
+async def is_song_playing():
+    global song_playing
+    if song_playing:
         return {"status": "Theme song is currently playing"}
     else:
         return {"status": "No theme song is playing"}
@@ -103,16 +120,16 @@ def play_song(song_file):
 
 # Background task to periodically check classification and play song
 async def check_for_character_and_play_song():
-    global classification_result, is_song_playing
+    global classification_result, song_playing
 
     while True:
-        if classification_result and not is_song_playing:
+        if classification_result and not song_playing:
             character = classification_result
 
             # Check if the recognized character has a theme song
             if character in character_to_song:
-                song_file = character_to_song[character]
-                is_song_playing = True
+                song_file = "themes/" + character_to_song[character]
+                song_playing = True
 
                 print(f"Playing {song_file} for 10 seconds...")
                 # Play the song (for 10 seconds)
@@ -122,27 +139,11 @@ async def check_for_character_and_play_song():
                 # Stop the song after 10 seconds
                 pygame.mixer.music.stop()
                 print(f"Finished playing {song_file}.")
-                is_song_playing = False
+                song_playing = False
                 classification_result = None  # Clear the classification after playing
 
         # Wait 1 second before checking again
         await asyncio.sleep(1)
-
-
-# @asynccontextmanager
-# async def lifespan(app: FastAPI):
-#     # Start the background task when the app starts
-#     task = asyncio.create_task(check_for_character_and_play_song())
-
-#     # Yield control to the application
-#     yield
-
-#     # Cleanup or shutdown tasks when app closes
-#     task.cancel()
-
-
-# app = FastAPI(lifespan=lifespan)
-app = FastAPI()
 
 
 @app.get("/stream/")
