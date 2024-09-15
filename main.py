@@ -8,7 +8,7 @@ import torch
 import requests
 import asyncio
 import pygame
-from contextlib import asynccontextmanager
+# from contextlib import asynccontextmanager
 
 
 app = FastAPI()
@@ -129,19 +129,20 @@ async def check_for_character_and_play_song():
         await asyncio.sleep(1)
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Start the background task when the app starts
-    task = asyncio.create_task(check_for_character_and_play_song())
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     # Start the background task when the app starts
+#     task = asyncio.create_task(check_for_character_and_play_song())
 
-    # Yield control to the application
-    yield
+#     # Yield control to the application
+#     yield
 
-    # Cleanup or shutdown tasks when app closes
-    task.cancel()
+#     # Cleanup or shutdown tasks when app closes
+#     task.cancel()
 
 
-app = FastAPI(lifespan=lifespan)
+# app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 
 @app.get("/stream/")

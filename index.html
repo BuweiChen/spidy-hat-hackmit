@@ -19,7 +19,7 @@
       async function fetchClassification() {
         try {
           const response = await fetch(
-            "http://0.0.0.0:8000/get_classification/"
+            "http://10.189.49.247:8000/get_classification/"
           );
           const data = await response.json();
 
@@ -43,7 +43,7 @@
       async function fetchSongStatus() {
         try {
           const response = await fetch(
-            "http://127.0.0.1:8000/is_song_playing/"
+            "http://10.189.49.247:8000/is_song_playing/"
           );
           const data = await response.json();
           document.getElementById("song-status").innerText = data.status;
