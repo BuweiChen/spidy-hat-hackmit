@@ -10,6 +10,10 @@
 
     <p id="classification-result">Waiting for classification...</p>
 
+    <h1>Theme Song Status</h1>
+
+    <p id="song-status">Checking...</p>
+
     <script>
       // Fetch the classification result periodically
       async function fetchClassification() {
@@ -34,6 +38,22 @@
 
       // Poll for the latest classification result every 3 seconds
       setInterval(fetchClassification, 3000);
+
+      // Function to fetch the status of whether a song is playing
+      async function fetchSongStatus() {
+        try {
+          const response = await fetch(
+            "http://127.0.0.1:8000/is_song_playing/"
+          );
+          const data = await response.json();
+          document.getElementById("song-status").innerText = data.status;
+        } catch (error) {
+          console.error("Error fetching song status:", error);
+        }
+      }
+
+      // Poll the song status every 1 second
+      setInterval(fetchSongStatus, 1000);
     </script>
   </body>
 </html>

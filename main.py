@@ -6,25 +6,53 @@ from PIL import Image
 import io
 import torch
 import requests
-from io import BytesIO
+import asyncio
+import pygame
+from contextlib import asynccontextmanager
+
 
 app = FastAPI()
 
+# Initialize pygame mixer for music playback
+pygame.mixer.init()
+
+# CORS Middleware to allow requests from other origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can restrict it to specific domains instead of "*"
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
-    allow_methods=["*"],  # You can restrict to specific methods like ['GET', 'POST']
-    allow_headers=["*"],  # You can restrict to specific headers like ['Content-Type']
+    allow_methods=["*"],  # Allow all methods
+    allow_headers=["*"],  # Allow all headers
 )
 
-# Load model and image processor
+# Load the model and image processor
 model_name_or_path = "vit-base-avengers-v1"
 image_processor = ViTImageProcessor.from_pretrained(model_name_or_path)
 model = ViTForImageClassification.from_pretrained(model_name_or_path)
 
-# Store the result for later retrieval
+# Global state to track classification result and song status
 classification_result = None
+is_song_playing = False
+
+# Character-to-mp3 mapping
+character_to_song = {
+    "Iron Man": "Iron_Man.mp3",
+    "Captain America": "Captain_America.mp3",
+    "Thor": "Thor.mp3",
+    "Spider Man": "Spider_Man.mp3",
+    "Docter Strage": "Docter_Strage.mp3",
+    "Black Panther": "Black_Panther.mp3",
+    "Ant Man": "Ant_Man.mp3",
+    "Captain Marvel": "Captain_Marvel.mp3",
+    "Hulk": "Hulk.mp3",
+    "Black Widow": "Black_Widow.mp3",
+    "Hawkeye Avengers": "Hawkeye_Avengers.mp3",
+    "Scarlet Witch": "Scarlet_Witch.mp3",
+    "Vision Avengers": "Vision_Avengers.mp3",
+    "Bucky Barnes": "Bucky_Barnes.mp3",
+    "Falcon Avengers": "Falcon_Avengers.mp3",
+    "Loki": "Loki.mp3",
+}
 
 
 @app.post("/classify/")
@@ -52,11 +80,68 @@ async def classify_image(file: UploadFile = File(...)):
 @app.get("/get_classification/")
 async def get_classification():
     global classification_result
-
     if classification_result:
         return {"predicted_class": classification_result}
     else:
         return {"error": "No classification result available yet"}
+
+
+@app.get("/is_song_playing/")
+async def is_song_playing_endpoint():
+    global is_song_playing
+    if is_song_playing:
+        return {"status": "Theme song is currently playing"}
+    else:
+        return {"status": "No theme song is playing"}
+
+
+# Function to play the song using pygame
+def play_song(song_file):
+    pygame.mixer.music.load(song_file)  # Load the mp3 file
+    pygame.mixer.music.play()  # Play the song
+
+
+# Background task to periodically check classification and play song
+async def check_for_character_and_play_song():
+    global classification_result, is_song_playing
+
+    while True:
+        if classification_result and not is_song_playing:
+            character = classification_result
+
+            # Check if the recognized character has a theme song
+            if character in character_to_song:
+                song_file = character_to_song[character]
+                is_song_playing = True
+
+                print(f"Playing {song_file} for 10 seconds...")
+                # Play the song (for 10 seconds)
+                play_song(song_file)
+                await asyncio.sleep(10)  # Wait for 10 seconds while the song plays
+
+                # Stop the song after 10 seconds
+                pygame.mixer.music.stop()
+                print(f"Finished playing {song_file}.")
+                is_song_playing = False
+                classification_result = None  # Clear the classification after playing
+
+        # Wait 1 second before checking again
+        await asyncio.sleep(1)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Start the background task when the app starts
+    task = asyncio.create_task(check_for_character_and_play_song())
+
+    # Yield control to the application
+    yield
+
+    # Cleanup or shutdown tasks when app closes
+    task.cancel()
+
+
+app = FastAPI(lifespan=lifespan)
 
 
 @app.get("/stream/")
