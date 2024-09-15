@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		028F3FEC2C96923300F798E2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028F3FEB2C96923300F798E2 /* Launch Screen.storyboard */; };
+		9B2444F22C90B04E00DCE231 /* MiTHackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2444F12C90B04E00DCE231 /* MiTHackApp.swift */; };
+		9B2444F42C90B04E00DCE231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2444F32C90B04E00DCE231 /* ContentView.swift */; };
+		9B2444F62C90B05000DCE231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2444F52C90B05000DCE231 /* Assets.xcassets */; };
+		9B2444F92C90B05000DCE231 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2444F82C90B05000DCE231 /* Preview Assets.xcassets */; };
+		9B2445012C90B0CD00DCE231 /* TerraRTiOS in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2445002C90B0CD00DCE231 /* TerraRTiOS */; };
+		9B2445032C90B28600DCE231 /* HTTPRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2445022C90B28600DCE231 /* HTTPRequestClient.swift */; };
+		9B2445052C90B2CC00DCE231 /* StreamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2445042C90B2CC00DCE231 /* StreamingView.swift */; };
+		9B24452F2C90B51200DCE231 /* GraphLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2445272C90B51200DCE231 /* GraphLine.swift */; };
+		9B2445302C90B51200DCE231 /* NewPointLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2445282C90B51200DCE231 /* NewPointLine.swift */; };
+		9B2445312C90B51200DCE231 /* TestGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2445292C90B51200DCE231 /* TestGraph.swift */; };
+		9B2445322C90B51200DCE231 /* Gridline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24452A2C90B51200DCE231 /* Gridline.swift */; };
+		9B2445332C90B51200DCE231 /* YAxisLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24452B2C90B51200DCE231 /* YAxisLabel.swift */; };
+		9B2445342C90B51200DCE231 /* XAxisLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24452C2C90B51200DCE231 /* XAxisLabel.swift */; };
+		9B2445352C90B51200DCE231 /* Datapoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24452D2C90B51200DCE231 /* Datapoint.swift */; };
+		9B2445362C90B51200DCE231 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24452E2C90B51200DCE231 /* LineGraph.swift */; };
+		9B2445392C90B54200DCE231 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2445382C90B54200DCE231 /* Colors.swift */; };
+		9B24453B2C90B55800DCE231 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24453A2C90B55800DCE231 /* Date.swift */; };
+		9B24453D2C90B58300DCE231 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24453C2C90B58300DCE231 /* RoundedCorner.swift */; };
+		9B2445462C90B5B000DCE231 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B24453F2C90B5B000DCE231 /* Poppins-Light.ttf */; };
+		9B2445472C90B5B000DCE231 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2445402C90B5B000DCE231 /* Poppins-SemiBold.ttf */; };
+		9B2445482C90B5B000DCE231 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2445412C90B5B000DCE231 /* Poppins-Medium.ttf */; };
+		9B2445492C90B5B000DCE231 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2445422C90B5B000DCE231 /* Poppins-Thin.ttf */; };
+		9B24454A2C90B5B000DCE231 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2445432C90B5B000DCE231 /* Poppins-Black.ttf */; };
+		9B24454B2C90B5B000DCE231 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2445442C90B5B000DCE231 /* Poppins-Bold.ttf */; };
+		9B24454C2C90B5B000DCE231 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2445452C90B5B000DCE231 /* Poppins-Regular.ttf */; };
+		9B8F54C82C9482E900E6E74A /* ConnectBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F54C72C9482E900E6E74A /* ConnectBlock.swift */; };
+		9B8F54CA2C949FD700E6E74A /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F54C92C949FD700E6E74A /* AttributedText.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9B2445632C91B19000DCE231 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		028F3FEB2C96923300F798E2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9B2444EE2C90B04E00DCE231 /* MiTHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiTHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B2444F12C90B04E00DCE231 /* MiTHackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiTHackApp.swift; sourceTree = "<group>"; };
+		9B2444F32C90B04E00DCE231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B2444F52C90B05000DCE231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B2444F82C90B05000DCE231 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9B2445022C90B28600DCE231 /* HTTPRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestClient.swift; sourceTree = "<group>"; };
+		9B2445042C90B2CC00DCE231 /* StreamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingView.swift; sourceTree = "<group>"; };
+		9B2445272C90B51200DCE231 /* GraphLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLine.swift; sourceTree = "<group>"; };
+		9B2445282C90B51200DCE231 /* NewPointLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPointLine.swift; sourceTree = "<group>"; };
+		9B2445292C90B51200DCE231 /* TestGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGraph.swift; sourceTree = "<group>"; };
+		9B24452A2C90B51200DCE231 /* Gridline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gridline.swift; sourceTree = "<group>"; };
+		9B24452B2C90B51200DCE231 /* YAxisLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAxisLabel.swift; sourceTree = "<group>"; };
+		9B24452C2C90B51200DCE231 /* XAxisLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAxisLabel.swift; sourceTree = "<group>"; };
+		9B24452D2C90B51200DCE231 /* Datapoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datapoint.swift; sourceTree = "<group>"; };
+		9B24452E2C90B51200DCE231 /* LineGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
+		9B2445382C90B54200DCE231 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9B24453A2C90B55800DCE231 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		9B24453C2C90B58300DCE231 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		9B24453F2C90B5B000DCE231 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		9B2445402C90B5B000DCE231 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		9B2445412C90B5B000DCE231 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		9B2445422C90B5B000DCE231 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		9B2445432C90B5B000DCE231 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		9B2445442C90B5B000DCE231 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		9B2445452C90B5B000DCE231 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		9B24454D2C90B5DD00DCE231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9B2445542C91B18E00DCE231 /* TerraMiTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerraMiTApp.swift; sourceTree = "<group>"; };
+		9B2445562C91B18F00DCE231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B2445582C91B19000DCE231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B24455B2C91B19000DCE231 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9B2445672C91B1BA00DCE231 /* TerraMiT Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TerraMiT Watch App.entitlements"; sourceTree = "<group>"; };
+		9B2445682C91B1DB00DCE231 /* TerraMiT-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TerraMiT-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9B8F54C72C9482E900E6E74A /* ConnectBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectBlock.swift; sourceTree = "<group>"; };
+		9B8F54C92C949FD700E6E74A /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B2444EB2C90B04E00DCE231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2445012C90B0CD00DCE231 /* TerraRTiOS in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B2444E52C90B04E00DCE231 = {
+			isa = PBXGroup;
+			children = (
+				028F3FEB2C96923300F798E2 /* Launch Screen.storyboard */,
+				9B2444F02C90B04E00DCE231 /* MiTHack */,
+				9B2445532C91B18E00DCE231 /* TerraMiT Watch App */,
+				9B2444EF2C90B04E00DCE231 /* Products */,
+				9B2445642C91B1AC00DCE231 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9B2444EF2C90B04E00DCE231 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B2444EE2C90B04E00DCE231 /* MiTHack.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B2444F02C90B04E00DCE231 /* MiTHack */ = {
+			isa = PBXGroup;
+			children = (
+				9B8F54C62C9482E300E6E74A /* Components */,
+				9B24454D2C90B5DD00DCE231 /* Info.plist */,
+				9B24453E2C90B59A00DCE231 /* Fonts */,
+				9B2445372C90B53D00DCE231 /* Extensions */,
+				9B2445162C90B38700DCE231 /* Graphing */,
+				9B2444F12C90B04E00DCE231 /* MiTHackApp.swift */,
+				9B2444F32C90B04E00DCE231 /* ContentView.swift */,
+				9B2444F52C90B05000DCE231 /* Assets.xcassets */,
+				9B2444F72C90B05000DCE231 /* Preview Content */,
+				9B2445022C90B28600DCE231 /* HTTPRequestClient.swift */,
+				9B2445042C90B2CC00DCE231 /* StreamingView.swift */,
+			);
+			path = MiTHack;
+			sourceTree = "<group>";
+		};
+		9B2444F72C90B05000DCE231 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9B2444F82C90B05000DCE231 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9B2445162C90B38700DCE231 /* Graphing */ = {
+			isa = PBXGroup;
+			children = (
+				9B24452D2C90B51200DCE231 /* Datapoint.swift */,
+				9B2445272C90B51200DCE231 /* GraphLine.swift */,
+				9B24452A2C90B51200DCE231 /* Gridline.swift */,
+				9B24452E2C90B51200DCE231 /* LineGraph.swift */,
+				9B2445282C90B51200DCE231 /* NewPointLine.swift */,
+				9B2445292C90B51200DCE231 /* TestGraph.swift */,
+				9B24452C2C90B51200DCE231 /* XAxisLabel.swift */,
+				9B24452B2C90B51200DCE231 /* YAxisLabel.swift */,
+			);
+			path = Graphing;
+			sourceTree = "<group>";
+		};
+		9B2445372C90B53D00DCE231 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B2445382C90B54200DCE231 /* Colors.swift */,
+				9B24453A2C90B55800DCE231 /* Date.swift */,
+				9B24453C2C90B58300DCE231 /* RoundedCorner.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9B24453E2C90B59A00DCE231 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9B2445432C90B5B000DCE231 /* Poppins-Black.ttf */,
+				9B2445442C90B5B000DCE231 /* Poppins-Bold.ttf */,
+				9B24453F2C90B5B000DCE231 /* Poppins-Light.ttf */,
+				9B2445412C90B5B000DCE231 /* Poppins-Medium.ttf */,
+				9B2445452C90B5B000DCE231 /* Poppins-Regular.ttf */,
+				9B2445402C90B5B000DCE231 /* Poppins-SemiBold.ttf */,
+				9B2445422C90B5B000DCE231 /* Poppins-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9B2445532C91B18E00DCE231 /* TerraMiT Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				9B2445682C91B1DB00DCE231 /* TerraMiT-Watch-App-Info.plist */,
+				9B2445672C91B1BA00DCE231 /* TerraMiT Watch App.entitlements */,
+				9B2445542C91B18E00DCE231 /* TerraMiTApp.swift */,
+				9B2445562C91B18F00DCE231 /* ContentView.swift */,
+				9B2445582C91B19000DCE231 /* Assets.xcassets */,
+				9B24455A2C91B19000DCE231 /* Preview Content */,
+			);
+			path = "TerraMiT Watch App";
+			sourceTree = "<group>";
+		};
+		9B24455A2C91B19000DCE231 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9B24455B2C91B19000DCE231 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9B2445642C91B1AC00DCE231 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B8F54C62C9482E300E6E74A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9B8F54C72C9482E900E6E74A /* ConnectBlock.swift */,
+				9B8F54C92C949FD700E6E74A /* AttributedText.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B2444ED2C90B04E00DCE231 /* MiTHack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B2444FC2C90B05000DCE231 /* Build configuration list for PBXNativeTarget "MiTHack" */;
+			buildPhases = (
+				9B2444EA2C90B04E00DCE231 /* Sources */,
+				9B2444EB2C90B04E00DCE231 /* Frameworks */,
+				9B2444EC2C90B04E00DCE231 /* Resources */,
+				9B2445632C91B19000DCE231 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiTHack;
+			packageProductDependencies = (
+				9B2445002C90B0CD00DCE231 /* TerraRTiOS */,
+			);
+			productName = MiTHack;
+			productReference = 9B2444EE2C90B04E00DCE231 /* MiTHack.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B2444E62C90B04E00DCE231 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					9B2444ED2C90B04E00DCE231 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 9B2444E92C90B04E00DCE231 /* Build configuration list for PBXProject "MiTHack" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B2444E52C90B04E00DCE231;
+			packageReferences = (
+				9B2444FF2C90B0CD00DCE231 /* XCRemoteSwiftPackageReference "TerraRTiOS" */,
+			);
+			productRefGroup = 9B2444EF2C90B04E00DCE231 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B2444ED2C90B04E00DCE231 /* MiTHack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B2444EC2C90B04E00DCE231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2444F92C90B05000DCE231 /* Preview Assets.xcassets in Resources */,
+				9B2445472C90B5B000DCE231 /* Poppins-SemiBold.ttf in Resources */,
+				9B2445462C90B5B000DCE231 /* Poppins-Light.ttf in Resources */,
+				9B24454C2C90B5B000DCE231 /* Poppins-Regular.ttf in Resources */,
+				9B24454B2C90B5B000DCE231 /* Poppins-Bold.ttf in Resources */,
+				9B24454A2C90B5B000DCE231 /* Poppins-Black.ttf in Resources */,
+				9B2445492C90B5B000DCE231 /* Poppins-Thin.ttf in Resources */,
+				9B2444F62C90B05000DCE231 /* Assets.xcassets in Resources */,
+				028F3FEC2C96923300F798E2 /* Launch Screen.storyboard in Resources */,
+				9B2445482C90B5B000DCE231 /* Poppins-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B2444EA2C90B04E00DCE231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2445032C90B28600DCE231 /* HTTPRequestClient.swift in Sources */,
+				9B24452F2C90B51200DCE231 /* GraphLine.swift in Sources */,
+				9B8F54CA2C949FD700E6E74A /* AttributedText.swift in Sources */,
+				9B8F54C82C9482E900E6E74A /* ConnectBlock.swift in Sources */,
+				9B2444F42C90B04E00DCE231 /* ContentView.swift in Sources */,
+				9B2445332C90B51200DCE231 /* YAxisLabel.swift in Sources */,
+				9B2445362C90B51200DCE231 /* LineGraph.swift in Sources */,
+				9B2445342C90B51200DCE231 /* XAxisLabel.swift in Sources */,
+				9B2444F22C90B04E00DCE231 /* MiTHackApp.swift in Sources */,
+				9B2445312C90B51200DCE231 /* TestGraph.swift in Sources */,
+				9B2445392C90B54200DCE231 /* Colors.swift in Sources */,
+				9B24453B2C90B55800DCE231 /* Date.swift in Sources */,
+				9B2445052C90B2CC00DCE231 /* StreamingView.swift in Sources */,
+				9B2445352C90B51200DCE231 /* Datapoint.swift in Sources */,
+				9B24453D2C90B58300DCE231 /* RoundedCorner.swift in Sources */,
+				9B2445302C90B51200DCE231 /* NewPointLine.swift in Sources */,
+				9B2445322C90B51200DCE231 /* Gridline.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9B2444FA2C90B05000DCE231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		9B2444FB2C90B05000DCE231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		9B2444FD2C90B05000DCE231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MiTHack/Preview Content\"";
+				DEVELOPMENT_TEAM = AZ3Z89548F;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiTHack/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TerraMiT;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Use Bluetooth to connect to BLE devices for HR Streaming";
+				INFOPLIST_KEY_NSMotionUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.hackmit.maria;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9B2444FE2C90B05000DCE231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MiTHack/Preview Content\"";
+				DEVELOPMENT_TEAM = AZ3Z89548F;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiTHack/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TerraMiT;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Use Bluetooth to connect to BLE devices for HR Streaming";
+				INFOPLIST_KEY_NSMotionUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.hackmit.maria;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B2444E92C90B04E00DCE231 /* Build configuration list for PBXProject "MiTHack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B2444FA2C90B05000DCE231 /* Debug */,
+				9B2444FB2C90B05000DCE231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B2444FC2C90B05000DCE231 /* Build configuration list for PBXNativeTarget "MiTHack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B2444FD2C90B05000DCE231 /* Debug */,
+				9B2444FE2C90B05000DCE231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B2444FF2C90B0CD00DCE231 /* XCRemoteSwiftPackageReference "TerraRTiOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tryterra/TerraRTiOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B2445002C90B0CD00DCE231 /* TerraRTiOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B2444FF2C90B0CD00DCE231 /* XCRemoteSwiftPackageReference "TerraRTiOS" */;
+			productName = TerraRTiOS;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9B2444E62C90B04E00DCE231 /* Project object */;
+}
