@@ -128,7 +128,7 @@ async def check_for_character_and_play_song():
 
             # Check if the recognized character has a theme song
             if character in character_to_song:
-                song_file = "themes/" + character_to_song[character]
+                song_file = "./theme/" + character_to_song[character]
                 song_playing = True
 
                 print(f"Playing {song_file} for 10 seconds...")
